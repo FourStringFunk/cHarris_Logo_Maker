@@ -1,6 +1,6 @@
 // Define the required npm extensions
-const inquirer = require('inquirer');
-const fs = require('fs');
+const inquirer = require('inquirer'); // import inquirer node package
+const fs = require('fs'); // import file system module
 
 // Write the function for terminal prompts
 function logoCreation() {
@@ -14,7 +14,7 @@ function logoCreation() {
             {
                 type: 'input',
                 name: 'textColor',
-                message: 'Enter the hex code for your text:'
+                message: 'Enter the hex code (e.g. #ffffff;) for your text:'
             },
             {
                 type: 'input',
@@ -25,7 +25,7 @@ function logoCreation() {
             {
                 type: 'input',
                 name: 'shapeColor',
-                message: 'Enter the hex code for the color of your chosen shape:',
+                message: 'Enter the hex code (e.g. #ffffff;) for the color of your chosen shape:',
             },
             {
                 type: 'input',
@@ -33,6 +33,9 @@ function logoCreation() {
                 message: 'What name would you like to save your file as? (EXCLUDE .svg)'
             }
         ])
+        .then(answers => {
+            const {text, textColor, shape, shapeColor, fileName} = answers;
+        })
 }
 
 // Write the function for applying the answers to the appropriate SVG template
