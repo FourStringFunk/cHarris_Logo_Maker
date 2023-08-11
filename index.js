@@ -1,7 +1,6 @@
 // Define the required npm extensions
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { default: Choice } = require('inquirer/lib/objects/choice');
 
 // Write the function for terminal prompts
 function logoCreation() {
@@ -43,6 +42,7 @@ function logoCreation() {
 // Write the code to create the SVG file using the SVG name answer
 
 // Write the code to run the application
+logoCreation();
 
 
 
