@@ -17,10 +17,10 @@ function logoCreation() {
                 message: 'Enter the hex code (e.g. #ffffff;) for your text:'
             },
             {
-                type: 'input',
+                type: 'list',
                 name: 'shape',
                 message: 'What shape would you like to use?',
-                choices: ['circle', 'star', 'square', 'triangle']
+                choices: ['Circle', 'Rectangle', 'Square', 'Triangle']
             },
             {
                 type: 'input',
@@ -35,12 +35,33 @@ function logoCreation() {
         ])
         .then(answers => {
             const {text, textColor, shape, shapeColor, fileName} = answers;
+            
+            // Write the function for applying the answers to the appropriate SVG template
+            let markup;
+            // Write the code for applying the appropriate SVG markup
+            switch (shape) {
+                case 'circle':
+                    markup = 
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+                        <circle cx="200" cy="200" r="100" fill="${shapeColor}" />
+                        <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" fill="${textColor}">${text}</text>
+                    </svg>`;
+                    break;
+            }
+
+            fs.writeFile(`${fileName}` + '.svg', markup, err => {
+                if (err) {
+                    console.error('There was an error saving the file', err);
+                } else {
+                    console.log('The file was successfully created');
+                }
+            });
         })
 }
 
-// Write the function for applying the answers to the appropriate SVG template
 
-// Write the code for applying the appropriate SVG markup
+
+
 
 // Write the code to create the SVG file using the SVG name answer
 
