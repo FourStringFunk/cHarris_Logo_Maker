@@ -43,8 +43,9 @@ function logoCreation() {
                 case 'Circle':
                     markup = 
                     `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
-                        <circle cx="200" cy="200" r="100" fill="${shapeColor}" />
-                        <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" fill="${textColor}">${text}</text>
+                        <style>.textStyle {font: bold 30px sans-serif }</style>
+                        <circle cx="150" cy="150" r="50" fill="${shapeColor}" />
+                        <text x="50%" y="53%" text-anchor="middle" class="textStyle" fill="${textColor}">${text}</text>
                     </svg>`;
                     break;
             }
