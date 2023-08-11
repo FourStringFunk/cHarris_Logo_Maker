@@ -1,6 +1,8 @@
 // Define the required npm extensions
 const inquirer = require('inquirer'); // import inquirer node package
 const fs = require('fs'); // import file system module
+const path = require('path'); // import path package
+const examples = path.join(__dirname, 'examples');
 
 // Write the function for terminal prompts
 function logoCreation() {
@@ -50,7 +52,7 @@ function logoCreation() {
                     break;
             }
 
-            fs.writeFile(`${fileName}.svg`, markup, err => {
+            fs.writeFile(`examples/${fileName}.svg`, markup, err => {
                 if (err) {
                     console.error('There was an error saving the file', err);
                 } else {
