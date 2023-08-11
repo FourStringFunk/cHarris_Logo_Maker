@@ -40,7 +40,7 @@ function logoCreation() {
             let markup;
             // Write the code for applying the appropriate SVG markup
             switch (shape) {
-                case 'circle':
+                case 'Circle':
                     markup = 
                     `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
                         <circle cx="200" cy="200" r="100" fill="${shapeColor}" />
@@ -49,7 +49,7 @@ function logoCreation() {
                     break;
             }
 
-            fs.writeFile(`${fileName}` + '.svg', markup, err => {
+            fs.writeFile(`${fileName}.svg`, markup, err => {
                 if (err) {
                     console.error('There was an error saving the file', err);
                 } else {
